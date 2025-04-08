@@ -1,5 +1,5 @@
 {% set name = "igwn-ligolw" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/igwn_ligolw-{{ version }}.tar.gz
-  sha256: 8cd3e9e45c76262c1b524068c1753c0c76e1e982c1972bc4d1f55e1e228b3db3
+  sha256: e5d740830d497dfcf13d1101b284a1f8bed98d5bd8164a0c236ab4a97eddd2fb
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [win or python_impl != 'cpython']
 
