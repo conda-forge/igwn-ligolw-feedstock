@@ -1,5 +1,5 @@
 {% set name = "igwn-ligolw" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/igwn_ligolw-{{ version }}.tar.gz
-  sha256: e5d740830d497dfcf13d1101b284a1f8bed98d5bd8164a0c236ab4a97eddd2fb
+  sha256: 02a7201445d5dba8179a28f097b1ca9839a6564a5503201ee922dcbc9aa31c9d
 
 build:
   number: 0
@@ -36,12 +36,23 @@ requirements:
 
 test:
   requires:
+    - make
+    - matplotlib-base
     - pip
+    - pytest-benchmark
+    - pytest-doctestplus
     - python-lal
+    - xz-tools
+  source_files:
+    - test
   commands:
     # check metadata
     - python -m pip check
     - python -m pip show igwn-ligolw
+    # Run tests
+    - python -m pytest test
+    - pytest --doctest-plus --pyargs igwn_ligolw
+    - make -C test
     # sanity check scripts
     - igwn_ligolw_add --help
     - igwn_ligolw_cut --help
