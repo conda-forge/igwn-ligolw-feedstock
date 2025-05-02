@@ -36,12 +36,23 @@ requirements:
 
 test:
   requires:
+    - make
+    - matplotlib-base
     - pip
+    - pytest-benchmark
+    - pytest-doctestplus
     - python-lal
+    - xz-tools
+  source_files:
+    - test
   commands:
     # check metadata
     - python -m pip check
     - python -m pip show igwn-ligolw
+    # Run tests
+    - python -m pytest test
+    - pytest --doctest-plus --pyargs igwn_ligolw
+    - make -C test
     # sanity check scripts
     - igwn_ligolw_add --help
     - igwn_ligolw_cut --help
