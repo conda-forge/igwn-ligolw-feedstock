@@ -11,13 +11,12 @@ Summary: Python LIGO Light-Weight XML I/O Library
 
 Development: https://git.ligo.org/computing/software/igwn-ligolw.git
 
-Documentation: https://igwn-ligolw.readthedocs.io
+Documentation: https://igwn-ligolw.readthedocs.io/
 
 The LIGO Light-Weight XML format is used extensively by compact object
 detection pipeline and associated tool sets.
 This package provides a Python I/O library for reading, writing, and
 interacting with documents in this format.
-
 
 Current build status
 ====================
