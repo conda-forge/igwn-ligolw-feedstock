@@ -1,5 +1,5 @@
 {% set name = "igwn-ligolw" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/igwn_ligolw-{{ version }}.tar.gz
-  sha256: 02a7201445d5dba8179a28f097b1ca9839a6564a5503201ee922dcbc9aa31c9d
+  sha256: 4ca1860e79ec5e25d575ae4e27fa8035a269af6fcda9da33f090ceb85b34b64b
 
 build:
   number: 0
