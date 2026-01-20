@@ -47,6 +47,7 @@ tests:
         - test
     requirements:
       run:
+        - libxml2
         - make
         - matplotlib-base
         - pip
