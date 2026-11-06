@@ -51,7 +51,8 @@ tests:
         - make
         - matplotlib-base
         - pip
-        - pytest-benchmark
+        - pytest <9.2
+        - pytest-benchmark <5.3
         - pytest-doctestplus
         - python-lal
         - xz-tools
